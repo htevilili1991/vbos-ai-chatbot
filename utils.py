@@ -48,8 +48,8 @@ def configure_openai():
         placeholder="sk-..."
         )
     if openai_api_key:
-        st.session_state['OPENAI_API_KEY'] = sk-proj-u8yZG0aKRFygaDihTTucT3BlbkFJb20ujX0AXQQz5jDd6ota
-        os.environ['OPENAI_API_KEY'] = sk-proj-u8yZG0aKRFygaDihTTucT3BlbkFJb20ujX0AXQQz5jDd6ota
+        st.session_state['OPENAI_API_KEY'] = openai_api_key
+        os.environ['OPENAI_API_KEY'] = openai_api_key
     else:
         st.error("Please add your OpenAI API key to continue.")
         st.info("Obtain your key from this link: https://platform.openai.com/account/api-keys")
