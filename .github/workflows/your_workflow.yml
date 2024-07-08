@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up OpenAI API Key
+      run: echo "OPENAI_API_KEY=${{ secrets.HERMAN }}" >> $GITHUB_ENV
+
+    - name: Run your script
+      run: python utils.py
